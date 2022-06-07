@@ -1,0 +1,1 @@
+ignores: ["stylelint-*", "@types/*", "tslib", "typescript-*"]

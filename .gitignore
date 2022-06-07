@@ -1,0 +1,15 @@
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+.idea/
+.vscode/
+build/
+tmp/
+temp/
+dist/
+node_modules/
+.env

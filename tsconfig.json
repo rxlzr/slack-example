@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "target": "esnext",
+    "rootDir": "./src",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ],
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "allowJs": false,
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "noEmitOnError": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "incremental": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  },
+  "lib": ["esnext"],
+  "include": ["src/**/*.ts"]
+}

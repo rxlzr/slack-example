@@ -1,0 +1,48 @@
+{
+  "name": "slacky",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "NODE_ENV=development ttsc",
+    "build-prod": "NODE_ENV=production ttsc",
+    "dev": "NODE_ENV=development run-p \"ttsc --watch\" \"nodemon --experimental-specifier-resolution=node --watch\"",
+    "prod": "NODE_ENV=production run-p \"ttsc --watch\" \"nodemon --experimental-specifier-resolution=node --watch\"",
+    "ttsc": "ttsc",
+    "nodemon": "nodemon",
+    "start": "node --experimental-specifier-resolution=node dist/app.js",
+    "clean": "rm -rf ./dist && mkdir -p ./dist",
+    "dc": "depcheck",
+    "pretty": "prettier --write \"**/*.{cjs,js,json,mjs,ts,tsx,html,css,yaml,yml}\"",
+    "elint": "eslint --max-warnings=0 --fix \"**/*.{cjs,js,mjs,ts,tsx}\"",
+    "slint": "/bin/true",
+    "ff": "run-s -c \"elint\" \"pretty\" \"slint\"",
+    "lint": "run-s -c \"elint\" \"pretty\" \"slint\" \"dc\"",
+    "cilint": "run-p \"pretty --no-write --check\" \"elint --no-fix\" \"slint --no-fix\" \"dc\"",
+    "cibuild": "run-p \"pretty --no-write --check\" \"elint --no-fix\" \"slint --no-fix\" \"dc\" \"build-prod\"",
+    "ci": "run-s \"clean\" \"cibuild\""
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.11.1",
+    "dotenv": "^16.0.1",
+    "slack-block-builder": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.41",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "depcheck": "^1.4.3",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^2.0.16",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.8.1",
+    "tslib": "^2.4.0",
+    "ttypescript": "^1.5.13",
+    "typescript": "^4.7.3",
+    "typescript-transform-paths": "^3.3.1"
+  },
+  "packageManager": "yarn@3.2.1"
+}
